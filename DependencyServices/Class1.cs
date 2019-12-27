@@ -6,6 +6,21 @@ using Newtonsoft.Json.Serialization;
 
 namespace DependencyServices
 {
+    public class DemoService
+    {
+        private IWeatherService _weatherService;
+
+        public DemoService(IWeatherService weatherService)
+        {
+            _weatherService = weatherService;
+        }
+
+        public double GetTemperature(int zipCode)
+        {
+            return _weatherService.GetWeatherForLocation(zipCode).main.temp;
+        }
+    }
+    
     public interface IWeatherService
     {
         WeatherResult GetWeatherForLocation(int zipCode);
