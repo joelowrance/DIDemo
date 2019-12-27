@@ -6,18 +6,36 @@ using Newtonsoft.Json.Serialization;
 
 namespace DependencyServices
 {
-    public class DemoService
+
+    public interface IDemoService
     {
-        private IWeatherService _weatherService;
+        string WhatShouldIWear(int zipCode);
+    }
+
+    public class DemoService : IDemoService
+    {
+        private readonly IWeatherService _weatherService;
 
         public DemoService(IWeatherService weatherService)
         {
             _weatherService = weatherService;
         }
 
-        public double GetTemperature(int zipCode)
+        public string WhatShouldIWear(int zipCode)
         {
-            return _weatherService.GetWeatherForLocation(zipCode).main.temp;
+            var temp = _weatherService.GetWeatherForLocation(21144)?.main?.temp;
+
+            if (temp < 40)
+            {
+                return "Jacket";
+            }
+            
+            if (temp < 50)
+            {
+                return "Sweatshirt";
+            }
+            
+            return "TShirt";
         }
     }
     
@@ -40,7 +58,7 @@ namespace DependencyServices
         }
     }
 
-    public class StubWeatherService : IWeatherService
+    public class WeatherService : IWeatherService
     {
         public WeatherResult GetWeatherForLocation(int zipCode)
         {
