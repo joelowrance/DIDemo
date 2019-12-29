@@ -3,12 +3,6 @@ using System.Collections.Generic;
 
 namespace DepenencyModels
 {
-    public class Class1
-    {
-    }
-
-
-
     public class Coord
     {
         public double lon { get; set; }
@@ -67,5 +61,6 @@ namespace DepenencyModels
         public int id { get; set; }
         public string name { get; set; }
         public int cod { get; set; }
+        public DateTime GeneratedAt { get; set; } = DateTime.Now;
     }
 }

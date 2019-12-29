@@ -18,12 +18,17 @@ namespace IoCContainers
             //var demo = new AutoFacDemo();
             //demo.Run();
             
-            var d2 = new LamarDemo();
-            d2.Run();
+            //var d2 = new LamarDemo();
+            //d2.Run();
 
             //var d3 = new MicrosoftDemo();
             //d3.Run();
+
+            var d4 = new InterceptionDemo();
+            d4.RunExceptionDemo();
             
+            var d5 = new InterceptionDemo();
+            d5.RunCachingDemo();
         }
     }
 
@@ -51,20 +56,12 @@ namespace IoCContainers
                 x.For<DemoService>().Use<DemoService>();
             });
 
-            var container2 = new Lamar.Container(_ =>
-            {
-                _.Scan(_scan =>
-                {
-                    _scan.Assembly(typeof(IDemoService).Assembly);
-                    _scan.WithDefaultConventions();
-                });
-            });
+           
 
             var demo = container.GetInstance<DemoService>();
             var temp = demo.WhatShouldIWear(21144);
 
-            var demo2 = container2.GetInstance<DemoService>();
-            var temp2 = demo2.WhatShouldIWear(21144);
+           
         }
     }
     

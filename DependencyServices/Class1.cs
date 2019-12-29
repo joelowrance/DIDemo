@@ -6,6 +6,10 @@ using Newtonsoft.Json.Serialization;
 
 namespace DependencyServices
 {
+    public interface ILogger
+    {
+        void WriteMessage(string message);
+    }
 
     public interface IDemoService
     {

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainers", "IoCContain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyServices", "DependencyServices\DependencyServices.csproj", "{AEDC64BF-D309-4F2F-A1A2-F96BF6457BBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{024205E6-4D17-42F1-85BA-61D8A10BAB3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{AEDC64BF-D309-4F2F-A1A2-F96BF6457BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDC64BF-D309-4F2F-A1A2-F96BF6457BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDC64BF-D309-4F2F-A1A2-F96BF6457BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
