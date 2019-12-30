@@ -2,6 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
+
+@using(Html.BeginForm("Post", "Home", FormMethod.Post)){
+<div class="form-row">
+    <label class="col-form-label">Enter ZipCode2</label>
+    <input type="text" class="form-control" name="zipCode" />
+</div>
+<button type="submit" class="btn btn-primary"></button>
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>

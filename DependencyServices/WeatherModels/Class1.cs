@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DepenencyModels
+/* These are classes that map to the json that the OpenWeather API returns */
+namespace DependencyServices.WeatherModels
 {
     public class Coord
     {

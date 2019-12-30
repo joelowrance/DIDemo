@@ -1,5 +1,7 @@
 ﻿using System;
-using DependencyServices;
+using DependencyServices.Abstractions;
+using DependencyServices.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace IoCContainers
 {
@@ -9,14 +11,15 @@ namespace IoCContainers
         {
             var container2 = new Lamar.Container(_ =>
             {
+                _.AddLogging();
                 _.Scan(_scan =>
                 {
-                    _scan.Assembly(typeof(IDemoService).Assembly);
-                    _scan.WithDefaultConventions();
+                    _scan.Assembly(typeof(IShirtService).Assembly);
+                    _scan.WithDefaultConventions(); // names must match, ie, ISomethingService must have a matching SomethingService 
                 });
             });
             
-            var demo2 = container2.GetInstance<DemoService>();
+            var demo2 = container2.GetInstance<ShirtService>();
             var temp2 = demo2.WhatShouldIWear(21144);
             Console.WriteLine(temp2);
         }
