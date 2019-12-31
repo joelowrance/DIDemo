@@ -24,15 +24,15 @@ namespace WebApplication.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var data = TempData["weather"] as string;
+            return View("Index", data);
         }
         
         [HttpPost]
         public IActionResult Post(int zipCode)
         {
-            
-            var result = _shirtService.WhatShouldIWear(zipCode);
-            return View("Index");
+            TempData["weather"] =_shirtService.WhatShouldIWear(zipCode);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

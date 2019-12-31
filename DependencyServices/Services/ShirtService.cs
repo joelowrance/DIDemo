@@ -21,7 +21,7 @@ namespace DependencyServices.Services
         {
             try
             {
-                var weather = _weatherService.GetWeatherForLocation(21144);
+                var weather = _weatherService.GetWeatherForLocation(zipCode);
                 var message = _displayService.GenerateDisplay(weather);
                 _logger.LogInformation($"Got weather:  {message}");
                 return message;

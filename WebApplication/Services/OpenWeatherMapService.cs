@@ -10,7 +10,7 @@ namespace WebApplication.Services
     {
         public WeatherResult GetWeatherForLocation(int zipCode)
         {
-            var url = $"https://samples.openweathermap.org/data/2.5/weather?zip={zipCode}&appid=d56e5ac459c38db397702745bfb21ddb";
+            var url = $"https://api.openweathermap.org/data/2.5/weather?zip={zipCode}&appid=d56e5ac459c38db397702745bfb21ddb&units=imperial";
 
             using (var client = new HttpClient())
             {
