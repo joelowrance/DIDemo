@@ -45,11 +45,11 @@ namespace IoCContainers
         public void Intercept(IInvocation invocation)
         {
             var args = invocation.Arguments[0] as string;
-            var cachekey = "weather_for_" + args;
+            var key = "weather_for_" + args;
 
-            if (_cache.Contains(cachekey))
+            if (_cache.Contains(key))
             {
-                invocation.ReturnValue = _cache[cachekey];
+                invocation.ReturnValue = _cache[key];
                 return;
             }
             
@@ -57,7 +57,7 @@ namespace IoCContainers
 
             if (invocation.ReturnValue != null)
             {
-                _cache.Add(new  System.Runtime.Caching.CacheItem(cachekey, invocation.ReturnValue),
+                _cache.Add(new  System.Runtime.Caching.CacheItem(key, invocation.ReturnValue),
                     new CacheItemPolicy {AbsoluteExpiration = DateTimeOffset.Now.AddHours(1)});
             }
         }

@@ -12,10 +12,10 @@ namespace IoCContainers
             var container2 = new Lamar.Container(_ =>
             {
                 _.AddLogging();
-                _.Scan(_scan =>
+                _.Scan(scan =>
                 {
-                    _scan.Assembly(typeof(IShirtService).Assembly);
-                    _scan.WithDefaultConventions(); // names must match, ie, ISomethingService must have a matching SomethingService 
+                    scan.Assembly(typeof(IShirtService).Assembly);
+                    scan.WithDefaultConventions(); // names must match, ie, ISomethingService must have a matching SomethingService 
                 });
             });
             

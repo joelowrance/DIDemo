@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication.Controllers;
 using WebApplication.Services;
 
 namespace WebApplication
@@ -33,8 +34,11 @@ namespace WebApplication
             services.AddScoped<IWeatherDisplayService, HtmlWeatherDisplayService>();
             services.AddScoped<IShirtService, ShirtService>();
             services.AddMvc().AddRazorRuntimeCompilation();
-            //todo:  AddTransient
-            //todo: AddSingleton
+
+            services.AddSingleton<SingletonService, SingletonService>(); // AddSingleton - One instance per application
+            services.AddScoped<ScopedService, ScopedService>(); //AddScoped - One instance per http request
+            services.AddTransient<TransientService, TransientService>(); //AddTransient - One instance per usage 
+            services.AddScoped<SomeService, SomeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
