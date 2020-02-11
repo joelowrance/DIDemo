@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyServices", "Depen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{024205E6-4D17-42F1-85BA-61D8A10BAB3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestExamples", "UnitTestExamples\UnitTestExamples.csproj", "{3E03E628-4FC6-40A2-BCBD-C75A79D0AD71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{024205E6-4D17-42F1-85BA-61D8A10BAB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E03E628-4FC6-40A2-BCBD-C75A79D0AD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E03E628-4FC6-40A2-BCBD-C75A79D0AD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E03E628-4FC6-40A2-BCBD-C75A79D0AD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E03E628-4FC6-40A2-BCBD-C75A79D0AD71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

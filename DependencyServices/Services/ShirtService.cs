@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Buffers;
 using DependencyServices.Abstractions;
+using DependencyServices.WeatherModels;
 using Microsoft.Extensions.Logging;
 
 namespace DependencyServices.Services
@@ -22,7 +24,7 @@ namespace DependencyServices.Services
             try
             {
                 var weather = _weatherService.GetWeatherForLocation(zipCode);
-                var message = _displayService.GenerateDisplay(weather);
+                var message = _displayService.GenerateDisplay(weather, CalculateShirt(weather));
                 _logger.LogInformation($"Got weather:  {message}");
                 return message;
             }
@@ -31,6 +33,21 @@ namespace DependencyServices.Services
                 _logger.LogError(ex, "Unable to get weather.");
                 return "Unknown.  Look out the window.";
             }
+        }
+
+        private string CalculateShirt(WeatherResult weatherResult)
+        {
+            if (weatherResult.main.temp < 40)
+            {
+                return "a jacket";
+            }
+
+            if (weatherResult.main.temp < 60)
+            {
+                return "a sweatshirt";
+            }
+
+            return "a t-shirt";
         }
     }
 }

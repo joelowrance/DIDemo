@@ -4,6 +4,6 @@ namespace DependencyServices.Abstractions
 {
     public interface IWeatherDisplayService
     {
-        string GenerateDisplay(WeatherResult weatherResult);
+        string GenerateDisplay(WeatherResult weatherResult, string shirtType);
     }
 }

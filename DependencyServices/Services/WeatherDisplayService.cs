@@ -6,7 +6,7 @@ namespace DependencyServices.Services
 {
     public class WeatherDisplayService : IWeatherDisplayService
     {
-        public string GenerateDisplay(WeatherResult weatherResult)
+        public string GenerateDisplay(WeatherResult weatherResult, string shirtDescription)
         {
             var message = new StringBuilder();
             message.AppendLine("Weather for today:");
@@ -14,20 +14,9 @@ namespace DependencyServices.Services
             message.AppendLine($"Low: {weatherResult.main.temp_min}");
             message.AppendLine($"Current: {weatherResult.main.temp}");
             message.AppendLine();
-            message.Append("You should wear ");
+            message.Append($"You should wear {shirtDescription}");
             
-            if (weatherResult.main.temp < 40)
-            {
-                message.Append("a jacket");
-            } 
-            else if (weatherResult.main.temp < 60)
-            {
-                message.Append("a sweatshirt");
-            }
-            else
-            {
-                message.Append("a t-shirt");    
-            }
+            
 
             return message.ToString();
         }
