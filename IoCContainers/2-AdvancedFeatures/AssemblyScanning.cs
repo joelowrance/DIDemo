@@ -9,10 +9,10 @@ namespace IoCContainers
     {
         public void Demo()
         {
-            var container2 = new Lamar.Container(_ =>
+            var container2 = new Lamar.Container(containerConfig =>
             {
-                _.AddLogging();
-                _.Scan(scan =>
+                containerConfig.AddLogging();
+                containerConfig.Scan(scan =>
                 {
                     scan.Assembly(typeof(IShirtService).Assembly);
                     scan.WithDefaultConventions(); // names must match, ie, ISomethingService must have a matching SomethingService 
